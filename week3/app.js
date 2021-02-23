@@ -45,8 +45,8 @@ app.event('reaction_added', async ({ event, client }) => {
     // see if the message we are getting from Slack is correct
     console.log(textToTranslate);
 
-
-    // Translate
+    // Translate the text
+    const translatedText = await translate(textToTranslate, language);
 
 
     // send the translated message back to slack
@@ -55,7 +55,8 @@ app.event('reaction_added', async ({ event, client }) => {
       const result = await client.chat.postMessage({
         channel: channel,
         thread_ts: ts,
-        text: `Thanks for the reaction, <@${event.user}>! 🎉`
+        // The _ is just to put it in Italics
+        text: `_Translation for :${reaction}:_\n${translatedText}`
       });
       console.log('result:', result);
     }
@@ -98,8 +99,16 @@ function getLanguageFromReaction(reaction) {
 
 }
 
-
-
+/**
+ * Use the Google translate API to translate the text
+ * @param {String} textToTranslate text to translate
+ * @param {Object} language 'language.code'
+ * @returns {String}
+ */
+async function translate(textToTranslate, language) {
+  // Fix this function for homework
+  return `:sparkles: Imagine this is in ${language.name}`;
+}
 
 
 

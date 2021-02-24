@@ -76,7 +76,7 @@ app.event('reaction_added', async ({ event, client }) => {
 
 /**
  * Get language info from Slack emoji reaction
- * @param {String} reaction 
+ * @param {String} reaction
  * @returns {Object} or undefined if unsupported emoji
  */
 function getLanguageFromReaction(reaction) {

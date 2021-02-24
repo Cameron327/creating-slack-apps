@@ -1,5 +1,6 @@
 const { App } = require('@slack/bolt');
 const { config } = require('dotenv');
+const { v2: { Translate } } = require('@google-cloud/translate');
 
 // load dotenv variables
 config();
@@ -9,6 +10,8 @@ const app = new App({
     token: process.env.SLACK_BOT_TOKEN,
     signingSecret: process.env.SLACK_SIGNING_SECRET
 });
+
+const translator = new Translate();
 
 // When a reaction is added
 // find the exact name of the event from the list in my google doc

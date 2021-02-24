@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "slackapp-bootcamp-2021",
+  "private_key_id": "781e6d650b27ca71bce4b7307f01534a8cd36805",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCwoKg3kDP/K5QS\n5KtolCBeBIiAsAuuu2bzUqUJmGNkRgXzrPMAAb3+zrqLEH2+mXSajKmRbtSZNqEc\npCu/FZzxbSJ7L5TUb5N/ud8NpaxtOnnz1upjOfHzGIH0Vb7HcdqXBMNnNlE8jny3\nZg5ROfZdnDZeSzKuCkwTAIt3NYj0jjWHZ12dOZXQmRDz7wSQTmutTPqoV6LpyvvS\nvEg5EZaAgnFuZZWJb0h+T4RPSE0AKsIm8swzVzUCZUaXEogXSp9ARJk+SnLbLq7d\nawLAAnYOvrki0NPXqqOcgeNUaeUNAwWK51GgBNWDE5v2wexfncoeOyJmTRQ8FhZ2\nThRjNhhrAgMBAAECggEAKbFiw+roOz2gMG2GAKOmmErdpfLobxCRlrJVftRX8d2N\nnh2fJstCfBl0c0srQ4iZu7mkdU4CJUB9+3LNWMfTSjIGx6lNqm/EE4xemKwY7Ze2\nHdcHcPDGqimI05JB/HZlsOxQ69YoivDfg7M1gfr6qtIrC0sY5XhMyNeCFFuwvnlG\nyMBmlNrtYW6beKhEWs5eCR4+TvEu4lf23qiMidiHqqQd3HVm01hdIHXAch9kj7DI\nsVCvB1EWYyJFzFQ9PcUaX/ZWrVnWfFU/6Gb+HmQqb8JW7HfZ/AYCDtOqG78Qd5aG\ndFvTN1qhrH1DMM6aEk3HohPaFVPS7Z/OwcZCshjJQQKBgQDWcnqeWkai2j3Yjzyz\nuj6p+jnX7mN9m5j3nSN+5hM0mVWHPQHFlwws7Z8AW1E83XkTxCK3wOH91iIYTgNK\ntLTg41ibsZYyN3XMAUcbDLjwOCBWjpTAKLqymHKFGglkAfIDCVJNp3bpx+5JBx6+\ni321lsu3OURYPDN1pAzCgDuU8QKBgQDS2ijDA4LyfjeHCtgpRLDKFNYuhauAj1Cc\nRtEHxTl3qTkFDsAQRhFrDIV5qYBE34T2NA7bnueAgrtv+LvxhzeEGIh1j99yJhfN\na1VGsmwHT/hUXgsNwtyDOLiKfNChf/qzwWMdAVxK3UkjtNyeo5NSlkVZv2uwKQMF\n7/3tkNeTGwKBgQCP5/THDRe3szKrf7uhdEsW79cfQ1c6dE8bYzTttGGQ+5C8l0D4\nIpvGDpOTvrPuX0Uf8Y/GtcYx/B+XJcrpuAhlncrZeDutaTBAfV8FFO2KLm/tBfNm\nXC6lKM446bcBiJiqVvgHKmkPCt6p3QBRp/PtBsugIeruNz/lIvh5EWpqUQKBgQDH\nMib0JWseYDNhNtOEGUrTft/hT5L4f2xuV1C/AIoMDCi8KHU2apumAExQ5dsyNeBN\nIF0xCmw2sksVu20C/vVprCuutN8p3eb6v/3uLj10ow491iKnO4JLzdg5rTUEff2A\nuKBEFLb2WxvvybvreymBCko2QWshH32lrFa+ium+JQKBgDzlC+w6aSES0fqdTEdJ\n2uVIe2JFllblakfASFY0yey9VdEyTZhD0umHoNPPZqRWtzWhheOeBb6bgPv0d0Gw\nkjUPVYXuHADyyl7RCxMhUeJo2Zjl4+YUN1SH01fhnZEKf+nMMRc+5Q14DmdwneBr\nBZ5VQNUkFvV41Z8qJX88HAJ1\n-----END PRIVATE KEY-----\n",
+  "client_email": "slackapp-bootcamp-2021@slackapp-bootcamp-2021.iam.gserviceaccount.com",
+  "client_id": "111447954413237077798",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/slackapp-bootcamp-2021%40slackapp-bootcamp-2021.iam.gserviceaccount.com"
+}

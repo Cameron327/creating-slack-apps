@@ -7,8 +7,8 @@ config();
 
 // initialize the slack app
 const app = new App({
-    token: process.env.SLACK_BOT_TOKEN,
-    signingSecret: process.env.SLACK_SIGNING_SECRET
+  token: process.env.SLACK_BOT_TOKEN,
+  signingSecret: process.env.SLACK_SIGNING_SECRET
 });
 
 const translator = new Translate();
@@ -28,9 +28,9 @@ app.event('reaction_added', async ({ event, client }) => {
     // now try to get language info from reactions
     // We will try to do: :flag-mx" as a reaction -> 'es', 'Spanish'
     // build a function to do it and put the function at the bottom of the code
-    const language = getLanguageFromReaction(reaction);
+    const countryCode = getLanguageFromReaction(reaction);
     // If they react with an emoji that isn't a flag, then just ignore it.
-    if (!language) return;
+    if (!countryCode) return;
 
     // Then get the text to translate
     const historyResult = await client.conversations.history({
@@ -49,7 +49,7 @@ app.event('reaction_added', async ({ event, client }) => {
     console.log(textToTranslate);
 
     // Translate the text
-    const translatedText = await translate(textToTranslate, language);
+    const [translatedText, ...y] = await translateText(textToTranslate, countryCode);
 
 
     // send the translated message back to slack
@@ -85,9 +85,10 @@ function getLanguageFromReaction(reaction) {
   // Language codes: https://cloud.google.com/translate/docs/languages
   const reactionToLanguageMap = {
     // Syntax: First is the Slack's emoji name, and then provide an object that is useful for the Google translate API
-    fr: { code: 'fr', name: 'French' },
-    mx: { code: 'es', name: 'Spanish' },
-    jp: { code: 'ja', name: 'Japnase' },
+    mx: ['es', 'Spanish'],
+    es: ['es', 'Spanish'],
+    ru: ['ru', 'Russian'],
+    jp: ['ja', 'Japanese'],
   };
 
   // Get the country codes of the language to translate
@@ -96,9 +97,9 @@ function getLanguageFromReaction(reaction) {
   // If it has the flag, split. Else, nothing.
   const [prefix, emojiCode] = reaction.includes('flag-') ? reaction.split('-') : ['', reaction];
   // We dumped the prefix into the prefix up there and never use it and we dump the useful part into emojiCode.
-  const language = reactionToLanguageMap[emojiCode];
+  const [countryCode, language] = reactionToLanguageMap[emojiCode];
 
-  return language;
+  return countryCode;
 
 }
 
@@ -108,9 +109,13 @@ function getLanguageFromReaction(reaction) {
  * @param {Object} language 'language.code'
  * @returns {String}
  */
-async function translate(textToTranslate, language) {
-  // Fix this function for homework
-  return `:sparkles: Imagine this is in ${language.name}`;
+async function translateText(textToTranslate, language) {
+  try {
+    return await translator.translate(textToTranslate, language);
+  } catch (e) {
+    console.log(e);
+  }
+
 }
 
 

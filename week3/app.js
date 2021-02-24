@@ -51,7 +51,6 @@ app.event('reaction_added', async ({ event, client }) => {
     // Translate the text
     const [translatedText, ...y] = await translateText(textToTranslate, countryCode);
 
-
     // send the translated message back to slack
     try {
       // Call chat.postMessage with the built-in client

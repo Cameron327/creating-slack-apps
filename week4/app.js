@@ -25,6 +25,7 @@ receiver.router.post('/github-starring', async (req, res) => {
     const verb = action === 'deleted' ? 'unstarred' : 'starred';
     const text = `${sender.login} just ${verb} the ${repository.name} repository, bringing the star count to ${repository.stargazers_count}.`
 
+    // This is a different way to post a message to the channel because we are using express
     app.client.chat.postMessage({
         token: process.env.SLACK_BOT_TOKEN,
         channel: 'general', 

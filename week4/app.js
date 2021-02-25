@@ -70,7 +70,7 @@ app.event('app_home_opened', async ({ event, client}) => {
                     type: 'header',
                     text: {
                         type: 'plain_text',
-                        text: 'Open Issuess'
+                        text: 'Open Issues in the Github repo "slack-bootcamp"'
                     },
                 },
                 // Put in the issueBlocks array full of the issue objects

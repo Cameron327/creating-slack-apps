@@ -23,7 +23,7 @@ receiver.router.post('/github-starring', async (req, res) => {
     console.log('Hit my route for github stars');
 
     // Now we want to pull info out from the body
-    const { action, repository, sender } = req.body
+    const { comment, action, repository, sender } = req.body
     const verb = action === 'deleted' ? 'unstarred' : 'starred';
     const text = `${sender.login} just ${verb} the ${repository.name} repository, bringing the star count to ${repository.stargazers_count}.`
 
@@ -33,7 +33,6 @@ receiver.router.post('/github-starring', async (req, res) => {
         channel: 'general', 
         text,
     });
-
     res.sendStatus(200);
 });
 
@@ -59,7 +58,6 @@ app.event('app_home_opened', async ({ event, client}) => {
             // For Slack specifically, the markdown is <...>
             text: `<${issue.html_url}|${issue.title}> opened by <${issue.user.html_url}|${issue.user.login}>`,
         },
-        
     }));
 
     // We want to show the issues in a view
@@ -72,7 +70,7 @@ app.event('app_home_opened', async ({ event, client}) => {
                     type: 'header',
                     text: {
                         type: 'plain_text',
-                        text: 'Open Issuessssssss'
+                        text: 'Open Issuess'
                     },
                 },
                 // Put in the issueBlocks array full of the issue objects
@@ -81,8 +79,6 @@ app.event('app_home_opened', async ({ event, client}) => {
         }
     });
 });
-
-
 
 (async ()=> {
     await app.start(process.env.PORT || 3000);
